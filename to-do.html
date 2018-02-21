@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>To-Do List</title>
+		<link rel="stylesheet" href="styles.css"/>
+		<script src="js.js"></script>
+	</head>
+  <body>
+		<!--navigation bar-->
+		<div>
+			<ul class = "navigation-bar">
+				<li class="navLink"><a href="to-do.html">To-do List</a></li>
+				<li class="navLink"><a href="gallery.html">Photo Gallery</a></li>
+			</ul>
+		</div>
+
+		<div id="to-do-list">
+			<table id="todo">
+				<thead>
+					<tr>
+						<th class="complete">Complete: </th>
+						<th class="description">Description: </th>
+						<th class="category">Category: </th>
+						<th class="dateAdded">Date/Time Added: </th>
+						<th class="deadline">Date/Time Deadline: </th>
+					</tr>
+				</thead>
+				<tbody>
+					<div>
+							<label for="task">Task description: </label>
+							<input type="text" id="task">
+							<label for="cat">Category: </label>
+							<select id="cat">
+  							<option value='{"name":"school","color":"#ff7272"}'>School</option>
+  							<option value='{"name":"work","color":"#4ff966"}'>Work</option>
+  							<option value='{"name":"activity","color":"#f9a44e"}'>Activity</option>
+  							<option value='{"name":"home","color":"#798afc"}'>Home</option>
+							</select>
+							<label for="dl">Deadline: </label>
+
+							<input type="text" id="dl">
+							<button onclick="addTask()">Add Task</button>
+					</div>
+				</tbody>
+			</table>
+
+		</div>
+
+
+  </body>
+</html>
