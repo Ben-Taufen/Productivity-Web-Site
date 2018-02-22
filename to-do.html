@@ -26,27 +26,52 @@
 						<th class="category">Category: </th>
 						<th class="dateAdded">Date/Time Added: </th>
 						<th class="deadline">Date/Time Deadline: </th>
+						<th class="sortList">Sort By: <select id="sort" onchange="changeFunc()">
+							<option value='added'>Date/time added</option>
+							<option value='deadline'>Date/time of deadline</option>
+							<option value='category'>Category</option>
+							<option value='complete'>Incomplete/Complete</option>
+						</select>
+					</th>
 					</tr>
 				</thead>
 				<tbody>
-					<div>
-							<label for="task">Task description: </label>
-							<input type="text" id="task">
-							<label for="cat">Category: </label>
-							<select id="cat">
-  							<option value='{"name":"school","color":"#ff7272"}'>School</option>
-  							<option value='{"name":"work","color":"#4ff966"}'>Work</option>
-  							<option value='{"name":"activity","color":"#f9a44e"}'>Activity</option>
-  							<option value='{"name":"home","color":"#798afc"}'>Home</option>
-							</select>
-							<label for="dl">Deadline: </label>
 
-							<input type="text" id="dl">
-							<button onclick="addTask()">Add Task</button>
-					</div>
 				</tbody>
+					<tr style="background-color: rgb(255, 114, 114);">
+					<td><input type="checkbox" checked="false" onclick="check(this)" ></td>
+					<td>Example Task</td>
+					<td>school</td>
+					<td>Wed Feb 21 2018 15:00:21 GMT-0600 (CST)</td>
+					<td>Fri Mar 03 2018 11:59:59 GMT-0600 (CST)</td>
+					<td><input type="button" value="Remove" onclick="removeRow(this)"/></td>
+				</tr>
 			</table>
+			<div id="addTask">
+					<label for="task">Task description: </label>
+					<input type="text" id="task">
+					<label for="cat">Category: </label>
+					<select id="cat" onchange="toggleAddCategory()">
+						<option value='{"name":"school","color":"#ff7272"}'>School</option>
+						<option value='{"name":"work","color":"#4ff966"}'>Work</option>
+						<option value='{"name":"activity","color":"#f9a44e"}'>Activity</option>
+						<option value='{"name":"home","color":"#798afc"}'>Home</option>
+						<option value='' class="addCat">Add Category</option>
+						<div id="newCat">
+							<label for="newCategory">Category: </label>
+							<input type="text" id="newCategory">
+							<select id="color">
+								<option value="green">Green</option>
+								<option value="white">White</option>
+							</select>
+							<button onclick="addCategory()" id="addCategory">Add</button>
+						</div>
+					</select>
+					<label for="dl">Deadline: </label>
 
+					<input type="text" id="dl">
+					<button onclick="addTask()">Add Task</button>
+			</div>
 		</div>
 
 
