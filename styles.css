@@ -1,6 +1,7 @@
 html{
   font-family: sans-serif;
   font-size: 100%;
+  background-color: #aae2ff;
 }
 body{
   font-size: 1rem;
@@ -11,6 +12,7 @@ body{
 }
 .todo{
   width: 100%;
+  float: left;
 }
 .todo tr, th{
   font-size: 1.25rem;
@@ -21,8 +23,8 @@ body{
 
 }
 #to-do-list{
-  position: relative;
-  margin-top: 100px;
+  float: left;
+  margin-top: 50px;
 
 }
 .navigation-bar{
@@ -69,4 +71,21 @@ li a:hover{
 }
 #addTask{
   padding: 15px;
+}
+#chart{
+  margin-top: 100px;
+  float:left;
+  padding-left: 50px;
+}
+#addTask{
+  position: relative;
+  margin-top: 50px;
+  float: left;
+
+}
+h1{
+  margin-top: 100px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
 }

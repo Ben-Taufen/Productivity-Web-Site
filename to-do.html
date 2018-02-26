@@ -8,7 +8,9 @@
 		<link rel="stylesheet" href="styles.css"/>
 		<script src="js.js"></script>
 	</head>
-  <body>
+  <body onload=setTable()>
+		<div id='result'></div>
+		<h1 id='title'>To-do List</h1>
 		<!--navigation bar-->
 		<div>
 			<ul class = "navigation-bar">
@@ -38,15 +40,13 @@
 				<tbody>
 
 				</tbody>
-					<tr style="background-color: rgb(255, 114, 114);">
-					<td><input type="checkbox" checked="false" onclick="check(this)" ></td>
-					<td>Example Task</td>
-					<td>school</td>
-					<td>Wed Feb 21 2018 15:00:21 GMT-0600 (CST)</td>
-					<td>Fri Mar 03 2018 11:59:59 GMT-0600 (CST)</td>
-					<td><input type="button" value="Remove" onclick="removeRow(this)"/></td>
-				</tr>
+
 			</table>
+		</div>
+			<div id="chart">
+				<canvas id="chartCanvas"></canvas>
+				<div id="chartLegend"></div>
+			</div>
 			<div id="addTask">
 					<label for="task">Task description: </label>
 					<input type="text" id="task">
@@ -61,18 +61,21 @@
 							<label for="newCategory">Category: </label>
 							<input type="text" id="newCategory">
 							<select id="color">
-								<option value="green">Green</option>
-								<option value="white">White</option>
+								<option value="Aqua">Aqua</option>
+								<option value="Crimson">Crimson</option>
+								<option value="Chartreuse">Chartreuse</option>
+								<option value="Grey">Grey</option>
+								<option value="DarkSeaGreen">Dark Sea Green</option>
+								<option value="Gold">Gold</option>
+								<option value="Orchid">Orchid</option>
 							</select>
 							<button onclick="addCategory()" id="addCategory">Add</button>
 						</div>
 					</select>
 					<label for="dl">Deadline: </label>
-
 					<input type="text" id="dl">
 					<button onclick="addTask()">Add Task</button>
 			</div>
-		</div>
 
 
   </body>
