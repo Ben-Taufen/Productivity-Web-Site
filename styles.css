@@ -212,9 +212,9 @@ h1{
   height: 100%;
   overflow: auto;
   background-color: black;
-  -webkit-transition-duration:.5s;
-  -webkit-transition-timing-function: ease;
 }
+
+
 .modal-content{
   position:relative;
   background-color: #fefefe;
@@ -222,9 +222,6 @@ h1{
   padding: 0;
   width: 90%;
   max-width: 900px;
-
-  -webkit-transition-duration:.5s;
-  -webkit-transition-timing-function: ease;
 }
 #play{
   color:white;
@@ -300,6 +297,12 @@ img.hover-shadow{
 .hover-shadow:hover{
   box-shadow: 0 4px 8px 0 rgbd(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
+.fadeIn{
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fadeIn;
+  animation-duration: 1.5s
+}
 .fade{
   -webkit-animation-name: cross-fade;
   -webkit-animation-duration: 1s;
@@ -313,4 +316,13 @@ img.hover-shadow{
 @keyframes cross-fade{
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn{
+  from{opacity: 0,height: 0}
+  to{opacity: 1, height: auto}
+}
+@keyframes fadeIn{
+  from {opacity: 0,height: 0}
+  to {opacity: 1,height: auto}
 }
