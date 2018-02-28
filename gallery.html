@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="styles.css"/>
 		<script src="js.js"></script>
 	</head>
-  <body>
+  <body onload="gallery()">
 		<!--navigation bar-->
     <div>
 		  <ul class ="navigation-bar">
@@ -16,5 +16,259 @@
 			  <li class="navLink"><a href="gallery.html">Photo Gallery</a></li>
 		  </ul>
     </div>
+    <h1>Image Gallery</h1>
+
+    <div id="gallery-container">
+      <div class="responsive">
+        <div class="gallery">
+        <img src="./images/thumb/photo1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        </div>
+      </div>
+      <div class="responsive">
+        <div class="gallery">
+        <img src="./images/thumb/photo2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        </div>
+      </div>
+      <div class="responsive">
+        <div class="gallery">
+        <img src="./images/thumb/photo3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </div>
+      </div>
+      <div class="responsive">
+        <div class="gallery">
+        <img src="./images/thumb/photo4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo5.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo6.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo7.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo8.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo9.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo10.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo11.jpg" onclick="openModal();currentSlide(11)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo12.jpg" onclick="openModal();currentSlide(12)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo13.jpg" onclick="openModal();currentSlide(13)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+    <img src="./images/thumb/photo14.jpg" onclick="openModal();currentSlide(14)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo15.jpg" onclick="openModal();currentSlide(15)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo16.jpg" onclick="openModal();currentSlide(16)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo17.jpg" onclick="openModal();currentSlide(17)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo18.jpg" onclick="openModal();currentSlide(18)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo19.jpg" onclick="openModal();currentSlide(19)" class="hover-shadow">
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+      <img src="./images/thumb/photo20.jpg" onclick="openModal();currentSlide(20)" class="hover-shadow">
+      </div>
+    </div>
+  </div>
+  <!--Lightbox-->
+  <div id="myModal" class="modal"  onkeydown="keydown(e)">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class ="modal-content"  onkeydown="keydown(e)">
+      <div class="mySlides fade">
+        <div class="numbertext">1/20</div>
+        <img src="./images/photo1.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">2/20</div>
+        <img src="./images/photo2.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">3/20</div>
+        <img src="./images/photo3.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4/20</div>
+        <img src="./images/photo4.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">5/20</div>
+        <img src="./images/photo5.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">6/20</div>
+        <img src="./images/photo6.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">7/20</div>
+        <img src="./images/photo7.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">8/20</div>
+        <img src="./images/photo8.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">9/20</div>
+        <img src="./images/photo9.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">10/20</div>
+        <img src="./images/photo10.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">11/20</div>
+        <img src="./images/photo11.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">12/20</div>
+        <img src="./images/photo12.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">13/20</div>
+        <img src="./images/photo13.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">14/20</div>
+        <img src="./images/photo14.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">15/20</div>
+        <img src="./images/photo15.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">16/20</div>
+        <img src="./images/photo16.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">17/20</div>
+        <img src="./images/photo17.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">18/20</div>
+        <img src="./images/photo18.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">19/20</div>
+        <img src="./images/photo19.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">20/20</div>
+        <img src="./images/photo20.jpg" style="width:100%">
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <a id="play" onclick="playShow()">Play</a>
+      <!-- thumbnail controls-->
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo1.jpg" onclick="currentSlide(1)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo2.jpg" onclick="currentSlide(2)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo3.jpg" onclick="currentSlide(3)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo4.jpg" onclick="currentSlide(4)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo5.jpg" onclick="currentSlide(5)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo6.jpg" onclick="currentSlide(6)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo7.jpg" onclick="currentSlide(7)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo8.jpg" onclick="currentSlide(8)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo9.jpg" onclick="currentSlide(9)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo10.jpg" onclick="currentSlide(10)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo11.jpg" onclick="currentSlide(11)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo12.jpg" onclick="currentSlide(12)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo13.jpg" onclick="currentSlide(13)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo14.jpg" onclick="currentSlide(14)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo15.jpg" onclick="currentSlide(15)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo16.jpg" onclick="currentSlide(16)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo17.jpg" onclick="currentSlide(17)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo18.jpg" onclick="currentSlide(18)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo19.jpg" onclick="currentSlide(19)">
+      </div>
+      <div class="column">
+        <img class="demo" src="./images/thumb/photo20.jpg" onclick="currentSlide(20)">
+      </div>
+    </div>
+  </div>
   </body>
 </html>

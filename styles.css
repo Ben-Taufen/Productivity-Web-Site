@@ -1,7 +1,66 @@
+*{
+  box-sizing: border-box;
+}
+#gallery-container{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 980px;
+}
+.responsive {
+    padding: 0;
+    float: left;
+}
+.gallery{
+  margin: 20px;
+  width: 100%;
+height: auto;
+overflow: hidden;
+position: relative;
+float: left;
+display: inline-block;
+cursor: pointer;
+background-size: cover;
+background-repeat: no-repeat;
+-webkit-transition: all .5s;
+-moz-transition: all .5s;
+-o-transition: all .5s;
+transition: all .5s;
+}
+.gallery img{
+  width: auto;
+  height: auto;
+}
+.gallery-poster{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.img-responsive{
+  position: absolute;
+  display: inline-block;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  max-width: 100%;
+  height: auto;
+  float:left;
+}
+
 html{
   font-family: sans-serif;
   font-size: 100%;
   background-color: #aae2ff;
+  margin-bottom: 20px;
 }
 body{
   font-size: 1rem;
@@ -37,6 +96,7 @@ body{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .navLink{
   float: left;
@@ -66,26 +126,191 @@ li a:hover{
   display: none;
 }
 #newCat{
-  position: relative;
+  position: inline;
   display: none;
 }
-#addTask{
-  padding: 15px;
-}
+
 #chart{
   margin-top: 100px;
   float:left;
   padding-left: 50px;
 }
 #addTask{
+  margin-top: 20px;
+  display: inline;
   position: relative;
-  margin-top: 50px;
   float: left;
 
+
+}
+#submit{
+  display: block;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding: 0;
+  float: left;
 }
 h1{
   margin-top: 100px;
   font-weight: bold;
   font-family: monospace;
   text-align: center;
+}
+.gallery:hover  {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.gallery:hover .gallery-poster:before, .gallery:focus .gallery-poster:before {
+    display: block;
+}
+
+.gallery:hover a, .gallery:focus a {
+    display: block;
+}
+
+.gallery-poster:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,73,94,0.75);
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+    .parent {width: 100%; margin: 20px 0px}
+        .wrapper {padding: 20px 20px;}
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.column{
+  float:left;
+  white-space: nowrap;
+}
+.modal{
+  display:none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  -webkit-transition-duration:.5s;
+  -webkit-transition-timing-function: ease;
+}
+.modal-content{
+  position:relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 900px;
+
+  -webkit-transition-duration:.5s;
+  -webkit-transition-timing-function: ease;
+}
+#play{
+  color:white;
+  position:absolute;
+  top:-35px;
+  right: 25px;
+  font-size: 25px;
+  font-weight: bold;
+}
+#play:hover, #play:focus{
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close{
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover, .close:focus{
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mySlides{
+  display:none;
+}
+.prev, .next{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next{
+  right:0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+.numbertext{
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+img.demo{
+  opacity: 0.6;
+}
+.active,.demo:hover{
+  opacity: 1;
+}
+img.hover-shadow{
+  transition: 0.3s
+}
+.demo{
+  white-space: nowrap;
+  overflow:auto;
+}
+.hover-shadow:hover{
+  box-shadow: 0 4px 8px 0 rgbd(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+.fade{
+  -webkit-animation-name: cross-fade;
+  -webkit-animation-duration: 1s;
+  animation-name: cross-fade;
+  animation-duration: 1s;
+}
+@-webkit-keyframes cross-fade{
+  from{opacity: .4}
+  to{opacity: 1}
+}
+@keyframes cross-fade{
+  from {opacity: .4}
+  to {opacity: 1}
 }
