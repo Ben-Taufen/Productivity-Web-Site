@@ -11,7 +11,9 @@ function addTask(){
 
 
   task = document.getElementById("task").value;
-
+  if(document.getElementById("cat").value==""){
+    addCategory();
+  }
   var obj=JSON.parse(document.getElementById("cat").value);
   category.innerHTML = obj.name;
   newTask.style.backgroundColor=obj.color;
@@ -210,10 +212,9 @@ function countCategory(cat){
 
 function sortTable(n) {
   //I created this function with help from W3 schools https://www.w3schools.com/howto/howto_js_sort_table.asp
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
   table = document.getElementById("todo");
   switching = true;
-  dir = "asc";
   while (switching) {
     switching = false;
     rows = table.getElementsByTagName("TR");
@@ -221,28 +222,17 @@ function sortTable(n) {
       shouldSwitch = false;
       x = rows[i].getElementsByTagName("TD")[n];
       y = rows[i + 1].getElementsByTagName("TD")[n];
-      if (dir == "asc") {
 
         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
           shouldSwitch= true;
           break;
         }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          shouldSwitch= true;
-          break;
-        }
-      }
+
     }
     if (shouldSwitch) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
       switchcount ++;
-    } else {
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
     }
   }
 }
@@ -253,6 +243,10 @@ function todoTable(complete,description,category,added,deadline,color){
   this.category=category;
   this.added=added;
   this.deadline=deadline;
+  this.color=color;
+}
+function newCategs(name,color){
+  this.name=name;
   this.color=color;
 }
 function saveTable(){
@@ -272,6 +266,19 @@ function saveTable(){
 
   }
   localStorage.setItem("tableData",JSON.stringify(t));
+
+  var a = [];
+  var cs = document.getElementById("cat");
+  if(cs.length>5){
+    for(var i=4;i<cs.length-1;i++){
+      var obj=JSON.parse(cs[i].value);
+      var name=obj.name;
+      var colr = obj.color;
+	     a.push(new newCategs(name,colr));
+     }
+  }
+  localStorage.setItem("cats",JSON.stringify(a));
+
 }
 function setTable(){
   var table = document.getElementById("todo");
@@ -311,6 +318,30 @@ function setTable(){
     createPieChart();
   }
   }
+  var c = localStorage.getItem("cats");
+  var obj2 = JSON.parse(c);
+  if(c==null){
+    return;
+  }
+  for(i=0;i<c.length;i++){
+    if(obj2[i]!=null){
+      var cats = document.getElementById("cat");
+      var option = document.createElement("option");
+
+      var newCat = obj2[i].name;
+      var color = obj2[i].color;
+
+      option.text = newCat;
+      option.value = "{\"name\":\"" + newCat + "\",\"color\":\"" + color + "\"}";
+      var index = cats.selectedIndex;
+      cats.add(option,cats.length-1);
+      cats.selectedIndex=index;
+      document.getElementById("newCategory").style.display="none";
+      document.getElementById("color").style.display="none";
+      document.getElementById("addCategory").style.display="none";
+    }
+  }
+
 }
 function openModal(){
   document.getElementById('myModal').style.display = "block";

@@ -74,6 +74,7 @@ body{
   float: left;
 }
 .todo tr, th{
+
   font-size: 1.25rem;
 }
 .todo tr, td{
@@ -137,11 +138,9 @@ li a:hover{
 }
 #addTask{
   margin-top: 20px;
-  display: inline;
+  display: block;
   position: relative;
   float: left;
-
-
 }
 #submit{
   display: block;
